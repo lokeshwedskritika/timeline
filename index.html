@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+
     /* Sapphire Blue & Silver Color Scheme */
     :root {
       --primary-dark: #082567;       /* Sapphire Blue */
@@ -339,29 +340,28 @@ header::before {
       transform: translateX(-50%) scale(1.1);
     }
 
-    /* Music Control */
     .music-control {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      z-index: 1000;
-      background: rgba(8, 37, 103, 0.8);
-      color: var(--accent-color);
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: all 0.3s ease;
-    }
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: rgba(8, 37, 103, 0.8);
+    color: var(--accent-color);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
 
-    .music-control:hover {
-      background: rgba(8, 37, 103, 1);
-      transform: scale(1.1);
-    }
+  .music-control:hover {
+    background: rgba(8, 37, 103, 1);
+    transform: scale(1.1);
+  }
 
     /* Navigation */
     .nav-container {
@@ -1148,6 +1148,7 @@ header::before {
     }
 
     .jain-element i {
+      
       font-size: 2.5rem;
       color: var(--primary-dark);
       margin-bottom: 1rem;
@@ -1228,6 +1229,140 @@ header::before {
 
     .nav-container.scrolled .language-switcher:hover {
       background: rgba(0, 0, 0, 0.1);
+    }
+
+    /* Couple Buttons Section */
+    .couple-buttons {
+      width: 100%;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(8, 37, 103, 0.1));
+      position: relative;
+      overflow: hidden;
+    }
+
+    .couple-buttons:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+      opacity: 0.1;
+      z-index: 0;
+    }
+
+    .couple-buttons-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .couple-button {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .couple-button:hover {
+      transform: translateY(-10px);
+    }
+
+    .button-content {
+      background: var(--accent-color);
+      padding: 2.5rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(192, 192, 192, 0.3);
+    }
+
+    .button-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(8, 37, 103, 0.8), rgba(10, 45, 122, 0.8));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 0;
+    }
+
+    .couple-button:hover .button-content::before {
+      opacity: 1;
+    }
+
+    .button-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-dark);
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .couple-button:hover .button-icon {
+      color: var(--accent-color);
+      transform: scale(1.2);
+    }
+
+    .button-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .couple-button:hover .button-title {
+      color: var(--accent-color);
+    }
+
+    .button-subtitle {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+    }
+
+    .couple-button:hover .button-subtitle {
+      color: var(--primary-light);
+    }
+
+    .groom-button .button-icon {
+      color: #082567;
+    }
+
+    .bride-button .button-icon {
+      color: #D4AF37;
+    }
+
+    .groom-button .button-content::before {
+      background: linear-gradient(135deg, rgba(8, 37, 103, 0.9), rgba(10, 45, 122, 0.9));
+    }
+
+    .bride-button .button-content::before {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(234, 190, 63, 0.9));
     }
 
     /* Responsive Design */
@@ -1331,6 +1466,10 @@ header::before {
         order: 0;
         text-align: center;
       }
+
+      .couple-button {
+        min-width: 100%;
+      }
     }
 
     @media (max-width: 480px) {
@@ -1379,18 +1518,32 @@ header::before {
       .mantra-text {
         font-size: 1.2rem;
       }
+
+      .button-content {
+        padding: 1.5rem;
+      }
+
+      .button-icon {
+        font-size: 2.5rem;
+      }
+
+      .button-title {
+        font-size: 1.8rem;
+      }
     }
+
   </style>
 </head>
 <body>
-  <!-- Background Music -->
   <audio id="backgroundMusic" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <source src="./WhatsApp Audio 2025-05-03 at 9.50.40 PM.mpeg" type="audio/mpeg">
+    <!-- <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg"> -->
     Your browser does not support the audio element.
   </audio>
   
-  <div class="music-control" onclick="toggleMusic()">
-    <i class="fas fa-music"></i>
+  <!-- Music Control Button -->
+  <div class="music-control" onclick="toggleMusic()" title="Toggle Music">
+    <i class="fas fa-volume-up" id="musicIcon"></i>
   </div>
 
   <!-- Navigation -->
@@ -1425,7 +1578,7 @@ header::before {
     <div class="logo-container">
       <img src="https://media-hosting.imagekit.io/6cd1e008cd064a44/6.png?Expires=1839166463&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=HDO13HNgGiCxb~NVsQ8tfzBlpyzdBk1Y9vD0FBcsav5xaVYro-piHoESadMrVjg-csax9f7jnex~bhDpnM9ydz9dF0jaDEuTMwcJUtwQdawrsaNeK6mUYHQoFFjs5UEuAnvlQg9hvXa804UeE7XaGR8o63ltY~trUstPdHQ~tE0DH4YAoe4ZTCHNvT2lqPDWl1UnFTyn9q~KzzES1v7bMUUrFFhgIxR9tvBecC6Hz6EHWWhwwWIHBYLn3c7aTh7g~g-cHT53F6I8W3GdnK8N1VAe16RWbjcbfhliOZAs9LLXM7YEYAlXndk0yW36mC0-wQsJXlHO92fT4bI8AMB0fg__" alt="Wedding Logo" class="logo">
     </div>
-    <div class="title">Lokesh ❤️ Kritika</div>
+    <div class="title"><span class="lokesh">Lokesh</span> <span class="heart"> ❤️ </span> <span class="kritika">Kritika</span></div>
     <div class="subtitle">"Saat Janam Ka Bandhan" - A Bond for Seven Lifetimes</div>
     <div class="subtitle">May 6 - 8, 2025 | Royal Orbit, Jabalpur</div>
     <div class="save-the-date">Save the Date</div>
@@ -1497,239 +1650,30 @@ header::before {
     </div>
   </section>
 
-  <!-- Itinerary Section -->
-  <section class="itinerary" id="itinerary">
-    <h2 class="section-title">Wedding Events Timeline</h2>
-
-    <div class="timeline">
-      <!-- Day 1 - 6th May -->
-      <div class="timeline-day-divider">On 6th May 2025</div>
+  <!-- Couple Buttons Section -->
+  <section class="couple-buttons">
+    <div class="section-title">Wedding Families Timeline</div>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem; color: var(--text-light);">
+      Explore the beautiful traditions and families coming together in this sacred union
+    </p>
+    
+    <div class="couple-buttons-container">
+      <a href="groom.html" class="couple-button groom-button">
+        <div class="button-content">
+          <i class="fas fa-male button-icon"></i>
+          <h3 class="button-title">Groom's Side</h3>
+          <p class="button-subtitle">Meet Lokesh's family & traditions</p>
+        </div>
+      </a>
       
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-coffee"></i> 09:00 AM
+      <a href="bride.html" class="couple-button bride-button">
+        <div class="button-content">
+          <i class="fas fa-female button-icon"></i>
+          <h3 class="button-title">Bride's Side</h3>
+          <p class="button-subtitle">Meet Kritika's family & traditions</p>
         </div>
-        <h3 class="timeline-title">Breakfast</h3>
-        <p class="venue">Venue: Ground Floor, MP 20 Restaurant</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-om"></i> 12:30 PM
-        </div>
-        <h3 class="timeline-title">Ganesh Sthapana</h3>
-        <p class="timeline-description">With prayers to Lord Ganesha, we begin our celebrations, seeking blessings for an obstacle-free journey</p>
-        <div class="timeline-notes">
-          <i class="fas fa-lightbulb"></i> Traditional Hindu ceremony to invoke blessings
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-utensils"></i> 01:30 PM
-        </div>
-        <h3 class="timeline-title">Lunch</h3>
-        <p class="venue">Venue: Ground Floor, MP 20 Restaurant</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-hand-holding-heart"></i> 03:00 PM
-        </div>
-        <h3 class="timeline-title">Mehndi Ceremony</h3>
-        <p class="venue">Venue: Third Floor, Lobby in front of the Rooms</p>
-        <div class="timeline-notes timeline-important">
-          <i class="fas fa-exclamation-circle"></i> Traditional mehendi designs will be applied
-        </div>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-coffee"></i> 05:00 PM
-        </div>
-        <h3 class="timeline-title">High Tea</h3>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-utensils"></i> 08:00 PM
-        </div>
-        <h3 class="timeline-title">Dinner</h3>
-        <p class="venue">Venue: Ground Floor, MP 20 Restaurant</p>
-      </div>
-
-      <!-- Day 2 - 7th May -->
-      <div class="timeline-day-divider">On 7th May 2025</div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-coffee"></i> 07:30 AM
-        </div>
-        <h3 class="timeline-title">Breakfast</h3>
-        <p class="venue">Venue: Ground Floor, MP 20 Restaurant</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-spa"></i> 08:30 AM
-        </div>
-        <h3 class="timeline-title">Haldi</h3>
-        <p class="venue">Venue: Third Floor, Lobby in front of the Rooms</p>
-        <p class="timeline-description">The golden glow of turmeric, symbolizing purity and prosperity in Hindu traditions</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-gifts"></i> 11:00 AM
-        </div>
-        <h3 class="timeline-title">Mayra</h3>
-        <p class="venue">Venue: First Floor, Pluto Hall</p>
-        <p class="timeline-description">Blessings from the maternal side, a cherished Jain tradition symbolizing love and support</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-utensils"></i> 01:30 PM
-        </div>
-        <h3 class="timeline-title">Lunch</h3>
-        <p class="venue">Venue: Ground Floor, MP 20 Restaurant</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-music"></i> 02:30 PM
-        </div>
-        <h3 class="timeline-title">Bada Geet</h3>
-        <p class="venue">Venue: First Floor, Pluto Hall</p>
-        <p class="timeline-description">Traditional wedding songs celebrating love, family, and spiritual union</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-swimming-pool "></i>  &nbsp;
-          <i class="fas fa-coffee "></i> 04:00 PM
-        </div>
-        <h3 class="timeline-title">Poolside Brunch & Chai Social</h3>
-        <p class="timeline-description">A relaxed afternoon by the pool with refreshing dips, warm conversations, and a delightful spread of chai, coffee, and light bites.</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-ring"></i> 08:00 PM
-        </div>
-        <h3 class="timeline-title">Engagement and Sangeet with Dinner</h3>
-        <p class="timeline-description">A night of music and dance, celebrating our love with flavorful food feast</p>
-      </div>
-
-      <!-- Day 3 - 8th May -->
-      <div class="timeline-day-divider">On 8th May 2025</div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-coffee"></i> 07:30 AM
-        </div>
-        <h3 class="timeline-title">Breakfast</h3>
-        <p class="venue">Venue: Ground Floor, MP 20 Restaurant</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-heart"></i> 10:30 AM
-        </div>
-        <h3 class="timeline-title">Shaadi</h3>
-        <p class="timeline-description">The sacred Hindu wedding rituals - Kanyavaran, Granthi Bandhan, and Saptapadi - as we unite for eternity</p>
-      </div>
-      
-      <div class="timeline-item">
-        <div class="timeline-time">
-          <i class="fas fa-utensils"></i> 01:30 PM
-        </div>
-        <h3 class="timeline-title">Lunch</h3>
-        <p class="venue">Venue: Ground Floor, MP 20 Restaurant</p>
-      </div>
+      </a>
     </div>
-  </section>
-
-  <!-- Family Section -->
-  <section class="family-section">
-    <h2 class="section-title">With Love From Our Families</h2>
-    <div class="family-groups">
-      <div class="family-group">
-        <h3>Warm Regards</h3>
-        <p>Shashi - Sunil</p>
-        <p>& Mahnot Family</p>
-        <p>Udasar/Delhi</p>
-      </div>
-      
-      <div class="family-group">
-        <h3>Bua & Fufaji</h3>
-        <p>Sunder Devi Baid</p>
-        <p>Sampat - Alay Chand Ji Maloo</p>
-        <p>Ratan - Ratan Lal Ji Tater</p>
-        <p>Madhu - Surendra Ji Bothra</p>
-        <p>Kusum - Dharmendra Ji Daklia</p>
-      </div>
-      
-      <div class="family-group">
-        <h3>Nanihal Paksh</h3>
-        <p>Rajshree - Harish ji Dugar</p>
-        <p>Madhu - Sanjay Ji Dugar</p>
-        <p>Anjali - Anjay Ji Dugar</p>
-      </div>
-
-      <div class="family-group">
-        <h3>Siblings</h3>
-        <p>Rishabh, Rohan, Saksham</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Photo Carousel -->
-  <section class="carousel-section">
-    <h2 class="section-title">Our Precious Moments</h2>
-    <div class="carousel">
-      <img id="carouselImage" src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Wedding Moment">
-      <a class="prev" onclick="changeImage(-1)">❮</a>
-      <a class="next" onclick="changeImage(1)">❯</a>
-    </div>
-    <div class="carousel-dots" id="carouselDots"></div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section class="gallery-section" id="gallery">
-    <h2 class="section-title">Gallery</h2>
-    <div class="gallery">
-      <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-        <img src="https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery Image 1">
-      </div>
-      <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-        <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery Image 2">
-      </div>
-      <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-        <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery Image 3">
-      </div>
-      <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-        <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery Image 4">
-      </div>
-      <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-        <img src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery Image 5">
-      </div>
-      <div class="gallery-item" onclick="openModal('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Gallery Image 6">
-      </div>
-    </div>
-  </section>
-
-  <!-- RSVP Section -->
-  <section class="rsvp" id="rsvp">
-    <h2>RSVP</h2>
-    <p>Kindly bless us with your presence by contacting:</p>
-    <ul>
-      <li><i class="fas fa-user"></i> Rajendra Mahnot — <a href="tel:+919313307151">9313307151</a></li>
-      <li><i class="fas fa-user"></i> Sunil Mahnot — <a href="tel:+919312244713">9312244713</a></li>
-      <li><i class="fas fa-user"></i> Saksham Mahnot — <a href="tel:+919213307151">9213307151</a></li>
-    </ul>
-    <p style="margin-top: 2rem; font-style: italic;">Note: As per Jain traditions, the wedding will be a completely vegetarian affair</p>
   </section>
 
   <!-- Map -->
@@ -1763,37 +1707,69 @@ header::before {
   </footer>
 
   <script>
-    // Background Music Control
-    const backgroundMusic = document.getElementById('backgroundMusic');
-    let isMusicPlaying = false;
-    
-    // Try to play music on user interaction
-    document.addEventListener('click', function() {
-      if (!isMusicPlaying) {
-        backgroundMusic.volume = 0.3;
-        backgroundMusic.play().then(() => {
-          isMusicPlaying = true;
-          document.querySelector('.music-control i').classList.remove('fa-music');
-          document.querySelector('.music-control i').classList.add('fa-volume-up');
-        }).catch(error => {
-          console.log('Autoplay prevented:', error);
-        });
-      }
-    }, { once: true });
-    
-    function toggleMusic() {
-      if (isMusicPlaying) {
-        backgroundMusic.pause();
-        isMusicPlaying = false;
-        document.querySelector('.music-control i').classList.remove('fa-volume-up');
-        document.querySelector('.music-control i').classList.add('fa-music');
-      } else {
-        backgroundMusic.play();
-        isMusicPlaying = true;
-        document.querySelector('.music-control i').classList.remove('fa-music');
-        document.querySelector('.music-control i').classList.add('fa-volume-up');
-      }
-    }
+
+// Music Control Logic
+const backgroundMusic = document.getElementById('backgroundMusic');
+const musicIcon = document.getElementById('musicIcon');
+
+let isMusicPlaying = false;
+let isMusicMuted = false;
+
+// Load mute state from localStorage
+if (localStorage.getItem('musicMuted') === 'true') {
+  backgroundMusic.muted = true;
+  isMusicMuted = true;
+}
+updateMusicIcon();
+
+// Try to autoplay music on first user interaction
+document.addEventListener('click', function () {
+  if (!isMusicPlaying) {
+    backgroundMusic.volume = 0.3;
+    backgroundMusic.play().then(() => {
+      isMusicPlaying = true;
+      updateMusicIcon();
+    }).catch(err => {
+      console.log('Autoplay blocked:', err);
+    });
+  }
+}, { once: true });
+
+function toggleMusic() {
+  if (!isMusicPlaying) {
+    backgroundMusic.volume = 0.3;
+    backgroundMusic.play().then(() => {
+      isMusicPlaying = true;
+
+      // Toggle mute state after first play
+      backgroundMusic.muted = false;
+      isMusicMuted = false;
+      localStorage.setItem('musicMuted', isMusicMuted);
+      updateMusicIcon();
+    }).catch(err => {
+      console.log('Playback failed:', err);
+    });
+  } else {
+    // If already playing, just toggle mute
+    backgroundMusic.muted = !backgroundMusic.muted;
+    isMusicMuted = backgroundMusic.muted;
+    localStorage.setItem('musicMuted', isMusicMuted);
+    updateMusicIcon();
+  }
+}
+
+// Update icon based on mute state
+function updateMusicIcon() {
+  if (backgroundMusic.muted || !isMusicPlaying) {
+    musicIcon.classList.remove('fa-volume-up');
+    musicIcon.classList.add('fa-volume-mute');
+    musicIcon.parentElement.setAttribute('title', 'Unmute Music');
+  } else {
+    musicIcon.classList.remove('fa-volume-mute');
+    musicIcon.classList.add('fa-volume-up');
+    musicIcon.parentElement.setAttribute('title', 'Mute Music');
+  }
+}
 
     // Navigation
     const navContainer = document.getElementById('navContainer');
